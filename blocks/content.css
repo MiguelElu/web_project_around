@@ -1,0 +1,71 @@
+.content {
+  display: flex;
+  justify-content: center;
+}
+.content__profile {
+  display: flex;
+  max-width: 880px;
+  width: 100%;
+  margin-top: 40px;
+  column-gap: 30px;
+  align-items: center;
+  flex-direction: row;
+}
+.content__avatar {
+  width: 120px;
+  height: 120px;
+}
+.content__profile-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 16px;
+}
+.content__name {
+  color: white;
+  margin: 0;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 114%;
+}
+.content__job {
+  color: white;
+  margin: 0;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+.content__edit-button {
+  margin-left: 18px;
+}
+.content__add-button {
+  margin-left: auto;
+  width: 150px;
+  height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .content__profile {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  .content__profile-info {
+    align-items: center;
+  }
+  .content__add-button {
+    width: 282px;
+    height: 50px;
+    margin: 0;
+    padding-top: 6px;
+  }
+  .content__name {
+    font-size: 22px;
+  }
+  .content__job {
+    font-size: 14px;
+  }
+}
