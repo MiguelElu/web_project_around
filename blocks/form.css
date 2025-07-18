@@ -12,6 +12,11 @@
 .form__cancel-button {
   height: 25px;
 }
+
+.form__cancel-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
 .form__elements {
   display: flex;
   flex-direction: column;
@@ -56,6 +61,11 @@
   height: 36px;
   width: 238px;
   margin-top: 16px;
+}
+
+.form__button:hover {
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 .form__hide {
