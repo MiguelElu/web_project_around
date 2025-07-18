@@ -23,13 +23,13 @@
         <section class="content__profile">
           <img class="content__avatar" src="./images/Avatar.png" />
           <div class="content__profile-info">
-            <h2 class="content__name">
-              Jacques Cousteau
+            <div class="content__name-container">
+              <h2 class="content__name">Jacques Cousteau</h2>
               <img
                 class="content__edit-button"
                 src="./images/Edit Button.png"
               />
-            </h2>
+            </div>
             <p class="content__job">Explorador</p>
           </div>
           <img class="content__add-button" src="./images/Add Button.png" />
@@ -88,7 +88,7 @@
                 alt="Paisaje foto 4"
               />
               <div class="content__foto-tag">
-                <p class="content__photo-tag-name">Montañas Calvas</p>
+                <p class="content__photo-tag-name">Latemar</p>
                 <img
                   class="content__like"
                   src="./images/like.png"
@@ -103,7 +103,9 @@
                 alt="Paisaje foto 5"
               />
               <div class="content__foto-tag">
-                <p class="content__photo-tag-name">Montañas Calvas</p>
+                <p class="content__photo-tag-name">
+                  Parque Nacional de la Vanoise
+                </p>
                 <img
                   class="content__like"
                   src="./images/like.png"
@@ -118,7 +120,7 @@
                 alt="Paisaje foto 6"
               />
               <div class="content__foto-tag">
-                <p class="content__photo-tag-name">Montañas Calvas</p>
+                <p class="content__photo-tag-name">Lago di Braies</p>
                 <img
                   class="content__like"
                   src="./images/like.png"
@@ -132,7 +134,7 @@
       <footer class="footer">
         <p class="footer__text">&#169; 2024 Around The U.S.</p>
       </footer>
-      <form class="form form-container">
+      <form class="form form-container form__hide">
         <div class="form__cancel-container">
           <img
             class="form__cancel-button"
@@ -142,8 +144,10 @@
         </div>
         <div class="form__elements">
           <h2 class="form__title">Editar perfil</h2>
-          <input class="form__field" type="text" placeholder="Nombre" />
-          <input class="form__field" type="text" placeholder="Acerca de mí" />
+          <div class="form__fields">
+            <input class="form__field" type="text" placeholder="${}" />
+            <input class="form__field" type="text" placeholder="Acerca de mí" />
+          </div>
           <img
             class="form__button"
             src="./images/Submit Button.png"
@@ -152,5 +156,6 @@
         </div>
       </form>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

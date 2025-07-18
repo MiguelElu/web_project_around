@@ -23,6 +23,10 @@
   justify-content: center;
   row-gap: 16px;
 }
+.content__name-container {
+  display: flex;
+  align-items: center;
+}
 .content__name {
   color: white;
   margin: 0;
@@ -43,6 +47,8 @@
 }
 .content__edit-button {
   margin-left: 18px;
+  width: 24px;
+  height: 24px;
 }
 .content__add-button {
   margin-left: auto;
@@ -78,7 +84,6 @@
   padding-right: 15px;
   align-items: center;
   height: 90px;
-  overflow: visible;
 }
 .content__photo-tag-name {
   font-family: "Inter";
@@ -86,6 +91,9 @@
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .content__like {
   height: 19px;
@@ -122,5 +130,9 @@
 @media screen and (max-width: 600px) {
   .content__gallery-grid {
     grid-template-columns: 1fr;
+  }
+  .content__edit-button {
+    width: 18px;
+    height: 18px;
   }
 }
