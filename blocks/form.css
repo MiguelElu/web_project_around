@@ -33,6 +33,10 @@
   margin-top: 34pxS;
   width: 238px;
 }
+.form__fields {
+  display: flex;
+  flex-direction: column;
+}
 .form__field {
   width: 238px;
   margin-bottom: 30px;
