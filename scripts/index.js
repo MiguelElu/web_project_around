@@ -8,7 +8,7 @@ let trabajo = document.querySelector(".content__job");
 let form_data = document.querySelector(".form__fields");
 
 function init_form() {
-  form.classList.toggle("form__hide");
+  form.classList.toggle("form-hide");
   form_data.innerHTML = `
   <input class="form__field" type="text" value="${nombre.textContent}" />
   <input class="form__field" type="text" value="${trabajo.textContent}" />
@@ -22,7 +22,7 @@ function save_changes() {
   trabajo.innerHTML = `${new_data[1].value}`;
   console.log(new_data[0].value);
 
-  form.classList.toggle("form__hide");
+  form.classList.toggle("form-hide");
 }
 
 close_button.addEventListener("click", init_form);
