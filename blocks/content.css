@@ -99,6 +99,13 @@
   height: 19px;
   width: 21px;
 }
+.content__edit-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.content__like:hover {
+}
 @media screen and (max-width: 880px) {
   .content__gallery-grid {
     grid-template-columns: repeat(2, 1fr);
