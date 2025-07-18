@@ -1,6 +1,8 @@
 .content {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .content__profile {
   display: flex;
@@ -48,6 +50,53 @@
   height: 50px;
 }
 
+.content__gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 20px;
+  column-gap: 17px;
+  margin-top: 50px;
+}
+.content__foto-item {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  row-gap: 0;
+  max-width: 282px;
+  max-height: 361px;
+  border-radius: 5%;
+  background-color: white;
+}
+.content__foto {
+  height: 282px;
+  width: 282px;
+}
+.content__foto-tag {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 21px;
+  padding-right: 15px;
+  align-items: center;
+  height: 90px;
+  overflow: visible;
+}
+.content__photo-tag-name {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+}
+.content__like {
+  height: 19px;
+  width: 21px;
+}
+@media screen and (max-width: 880px) {
+  .content__gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media screen and (max-width: 768px) {
   .content__profile {
     flex-direction: column;
@@ -67,5 +116,11 @@
   }
   .content__job {
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content__gallery-grid {
+    grid-template-columns: 1fr;
   }
 }
