@@ -1,0 +1,81 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form__cancel-container {
+  display: flex;
+  justify-content: end;
+  width: 490px;
+}
+
+.form__cancel-button {
+  height: 25px;
+}
+.form__elements {
+  display: flex;
+  flex-direction: column;
+  width: 430px;
+  height: 330px;
+  background-color: white;
+  border-radius: 5px;
+  align-items: center;
+}
+.form__title {
+  font-family: Inter;
+  font-weight: 900;
+  font-size: 24px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  margin-bottom: 76px;
+  margin-top: 34pxS;
+  width: 238px;
+}
+.form__fields {
+  display: flex;
+  flex-direction: column;
+}
+.form__field {
+  width: 238px;
+  margin-bottom: 30px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+
+  border-color: #c4c4c4;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.form__button {
+  height: 36px;
+  width: 238px;
+  margin-top: 16px;
+}
+
+.form__hide {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .form__cancel-container {
+    width: 282px;
+  }
+
+  .form__cancel-button {
+    height: 20px;
+    margin-bottom: 13px;
+  }
+  .form__elements {
+    width: 282px;
+    height: 322px;
+  }
+  .form__title {
+    font-size: 18px;
+  }
+}
