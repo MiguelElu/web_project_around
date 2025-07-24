@@ -55,6 +55,10 @@
   width: 150px;
   height: 50px;
 }
+.content__add-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
 
 .content__gallery-grid {
   display: grid;
@@ -66,24 +70,44 @@
 .content__foto-item {
   display: flex;
   flex-direction: column;
+  position: relative;
   margin: 0;
   row-gap: 0;
   max-width: 282px;
   max-height: 361px;
   border-radius: 5%;
   background-color: white;
+  overflow: hidden;
 }
 .content__foto {
   height: 282px;
   width: 282px;
+  border-radius: 5% 5% 0 0;
 }
+.content__foto:hover {
+  cursor: pointer;
+}
+.content__trash-icon {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  height: 19.3px;
+  width: 18px;
+  z-index: 2;
+}
+.content__trash-icon:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 .content__foto-tag {
   display: flex;
   justify-content: space-between;
   padding-left: 21px;
   padding-right: 15px;
   align-items: center;
-  height: 90px;
+  height: 79px;
+  overflow: hidden;
 }
 .content__photo-tag-name {
   font-family: "Inter-Regular", "Inter";
@@ -105,6 +129,10 @@
 }
 
 .content__like:hover {
+  opacity: 0.5;
+  cursor: pointer;
+  height: 21px;
+  width: 23px;
 }
 @media screen and (max-width: 880px) {
   .content__gallery-grid {
