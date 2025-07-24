@@ -12,6 +12,7 @@
   </head>
   <body>
     <div class="page">
+      <div class="fullview hidden"></div>
       <header class="header">
         <div class="header__container">
           <div class="header__box">
@@ -35,106 +36,34 @@
           <img class="content__add-button" src="./images/Add Button.png" />
         </section>
         <section class="content__gallery">
-          <div class="content__gallery-grid">
-            <div class="content__foto-item">
-              <img
-                class="content__foto"
-                src="./images/kirill-pershin-1088404-unsplash 1.png"
-                alt="Paisaje foto 1"
-              />
-              <div class="content__foto-tag">
-                <p class="content__photo-tag-name">Valle de Yosemiti</p>
-                <img
-                  class="content__like"
-                  src="./images/like.png"
-                  alt="like button"
-                />
-              </div>
-            </div>
-            <div class="content__foto-item">
-              <img
-                class="content__foto"
-                src="./images/kirill-pershin-1404681-unsplash 2.png"
-                alt="Paisaje foto 2"
-              />
-              <div class="content__foto-tag">
-                <p class="content__photo-tag-name">Lago Louise</p>
-                <img
-                  class="content__like"
-                  src="./images/like.png"
-                  alt="like button"
-                />
-              </div>
-            </div>
-            <div class="content__foto-item">
-              <img
-                class="content__foto"
-                src="./images/kirill-pershin-1556355-unsplash 3.png"
-                alt="Paisaje foto 3"
-              />
-              <div class="content__foto-tag">
-                <p class="content__photo-tag-name">Montañas Calvas</p>
-                <img
-                  class="content__like"
-                  src="./images/like.png"
-                  alt="like button"
-                />
-              </div>
-            </div>
-            <div class="content__foto-item">
-              <img
-                class="content__foto"
-                src="./images/kirill-pershin-1404681-unsplash (1) 4.png"
-                alt="Paisaje foto 4"
-              />
-              <div class="content__foto-tag">
-                <p class="content__photo-tag-name">Latemar</p>
-                <img
-                  class="content__like"
-                  src="./images/like.png"
-                  alt="like button"
-                />
-              </div>
-            </div>
-            <div class="content__foto-item">
-              <img
-                class="content__foto"
-                src="./images/kirill-pershin-1556355-unsplash (1) 5.png"
-                alt="Paisaje foto 5"
-              />
-              <div class="content__foto-tag">
-                <p class="content__photo-tag-name">
-                  Parque Nacional de la Vanoise
-                </p>
-                <img
-                  class="content__like"
-                  src="./images/like.png"
-                  alt="like button"
-                />
-              </div>
-            </div>
-            <div class="content__foto-item">
-              <img
-                class="content__foto"
-                src="./images/kirill-pershin-1088404-unsplash (1) 6.png"
-                alt="Paisaje foto 6"
-              />
-              <div class="content__foto-tag">
-                <p class="content__photo-tag-name">Lago di Braies</p>
-                <img
-                  class="content__like"
-                  src="./images/like.png"
-                  alt="like button"
-                />
-              </div>
-            </div>
-          </div>
+          <div class="content__gallery-grid"></div>
         </section>
       </main>
       <footer class="footer">
         <p class="footer__text">&#169; 2024 Around The U.S.</p>
       </footer>
-      <form class="form form-container form-hide">
+    </div>
+
+    <template id="photo-item">
+      <div class="content__foto-item">
+        <img class="content__foto" src="" alt="" />
+        <div class="content__foto-tag">
+          <p class="content__photo-tag-name"></p>
+          <img
+            class="content__like"
+            src="./images/like.png"
+            alt="like button"
+          />
+          <img
+            class="content__trash-icon"
+            src="./images/trash.png"
+            alt="Trash Icon"
+          />
+        </div>
+      </div>
+    </template>
+    <template id="form">
+      <form class="form form-container">
         <div class="form__cancel-container">
           <img
             class="form__cancel-button"
@@ -143,10 +72,10 @@
           />
         </div>
         <div class="form__elements">
-          <h2 class="form__title">Editar perfil</h2>
+          <h2 class="form__title"></h2>
           <div class="form__fields">
-            <input class="form__field" type="text" placeholder="${}" />
-            <input class="form__field" type="text" placeholder="Acerca de mí" />
+            <input class="form__field" type="text" placeholder="" />
+            <input class="form__field" type="text" placeholder="" />
           </div>
           <img
             class="form__button"
@@ -155,7 +84,19 @@
           />
         </div>
       </form>
-    </div>
+    </template>
+    <template id="image-fullview">
+      <div class="fullview">
+        <div class="fullview__container">
+          <img src="" alt="Paisaje en vista completa" class="fullview__image" />
+          <img
+            class="fullview__cancel-button"
+            src="./images/Close Icon.png"
+            alt="Close icon"
+          />
+        </div>
+      </div>
+    </template>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
