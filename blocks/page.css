@@ -9,6 +9,11 @@
   transform: translate(-50%, 0);
 }
 
+.button-active:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 600px) {
   .form-container {
     top: 116px;

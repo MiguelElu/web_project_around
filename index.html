@@ -12,7 +12,6 @@
   </head>
   <body>
     <div class="page">
-      <div class="fullview hidden"></div>
       <header class="header">
         <div class="header__container">
           <div class="header__box">
@@ -27,13 +26,16 @@
             <div class="content__name-container">
               <h2 class="content__name">Jacques Cousteau</h2>
               <img
-                class="content__edit-button"
+                class="content__edit-button button-active button-state-change"
                 src="./images/Edit Button.png"
               />
             </div>
             <p class="content__job">Explorador</p>
           </div>
-          <img class="content__add-button" src="./images/Add Button.png" />
+          <img
+            class="content__add-button button-active button-state-change"
+            src="./images/Add Button.png"
+          />
         </section>
         <section class="content__gallery">
           <div class="content__gallery-grid"></div>
@@ -46,16 +48,16 @@
 
     <template id="photo-item">
       <div class="content__foto-item">
-        <img class="content__foto" src="" alt="" />
+        <img class="content__foto button-state-change" src="" alt="" />
         <div class="content__foto-tag">
           <p class="content__photo-tag-name"></p>
           <img
-            class="content__like"
+            class="content__like button-active"
             src="./images/like.png"
             alt="like button"
           />
           <img
-            class="content__trash-icon"
+            class="content__trash-icon button-active"
             src="./images/trash.png"
             alt="Trash Icon"
           />
@@ -63,10 +65,10 @@
       </div>
     </template>
     <template id="form">
-      <form class="form form-container">
+      <form class="form form-container" novalidate>
         <div class="form__cancel-container">
           <img
-            class="form__cancel-button"
+            class="form__cancel-button button-active button-state-change"
             src="./images/Close Icon.png"
             alt="Close icon"
           />
@@ -74,11 +76,19 @@
         <div class="form__elements">
           <h2 class="form__title"></h2>
           <div class="form__fields">
-            <input class="form__field" type="text" placeholder="" />
-            <input class="form__field" type="text" placeholder="" />
+            <input
+              class="form__field"
+              type="text"
+              id="text1"
+              placeholder=""
+              required
+            />
+            <span class="form__input-error text1-error"></span>
+            <input class="form__field" placeholder="" id="text2" required />
+            <span class="form__input-error text2-error"></span>
           </div>
           <img
-            class="form__button"
+            class="form__button button-active button-state-change"
             src="./images/Submit Button.png"
             alt="Botton de guardar"
           />
@@ -90,7 +100,7 @@
         <div class="fullview__container">
           <img src="" alt="Paisaje en vista completa" class="fullview__image" />
           <img
-            class="fullview__cancel-button"
+            class="fullview__cancel-button button-active button-state-change"
             src="./images/Close Icon.png"
             alt="Close icon"
           />
@@ -98,5 +108,6 @@
       </div>
     </template>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js" type="module"></script>
   </body>
 </html>

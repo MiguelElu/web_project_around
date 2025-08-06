@@ -55,10 +55,6 @@
   width: 150px;
   height: 50px;
 }
-.content__add-button:hover {
-  opacity: 0.5;
-  cursor: pointer;
-}
 
 .content__gallery-grid {
   display: grid;
@@ -95,10 +91,6 @@
   width: 18px;
   z-index: 2;
 }
-.content__trash-icon:hover {
-  opacity: 0.5;
-  cursor: pointer;
-}
 
 .content__foto-tag {
   display: flex;
@@ -123,17 +115,7 @@
   height: 19px;
   width: 21px;
 }
-.content__edit-button:hover {
-  opacity: 0.5;
-  cursor: pointer;
-}
 
-.content__like:hover {
-  opacity: 0.5;
-  cursor: pointer;
-  height: 21px;
-  width: 23px;
-}
 @media screen and (max-width: 880px) {
   .content__gallery-grid {
     grid-template-columns: repeat(2, 1fr);
