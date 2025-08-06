@@ -7,6 +7,7 @@ let trabajo = document.querySelector(".content__job");
 let gallery = document.querySelector(".content__gallery-grid");
 let main = document.querySelector(".content");
 let page = document.querySelector(".page");
+let counter = false;
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -64,9 +65,7 @@ function createImage(url, name) {
         .querySelector(".fullview")
         .cloneNode(true);
       fullviewElement.querySelector(".fullview__image").src = evt.target.src;
-      console.log(
-        fullviewElement.querySelector(".fullview__image").clientWidth
-      );
+
       fullviewElement
         .querySelector(".fullview__cancel-button")
         .addEventListener("click", (evt) => {
@@ -89,22 +88,42 @@ function openForm(type) {
     formElement.querySelector(".form__title").textContent = "Editar Perfil";
     elementFields[0].value = nombre.textContent;
     elementFields[1].value = trabajo.textContent;
+    elementFields[0].maxLength = "30";
+    elementFields[0].minLength = "2";
+    elementFields[1].maxLength = "200";
+    elementFields[1].minLength = "2";
+    elementFields[1].type = "text";
     formElement
       .querySelector(".form__button")
       .addEventListener("click", function (evt) {
-        save_changes();
-        evt.target.parentElement.parentElement.remove();
+        if (Array.from(evt.target.classList).includes("button-active")) {
+          save_changes();
+          evt.target.parentElement.parentElement.remove();
+        }
       });
   }
   if (type == "Add") {
     formElement.querySelector(".form__title").textContent = "Nuevo lugar";
     elementFields[0].placeholder = "Titulo";
+    elementFields[0].maxLength = "40";
+    elementFields[0].minLength = "2";
+    elementFields[1].type = "url";
     elementFields[1].placeholder = "Enlace a la imagen";
     formElement
       .querySelector(".form__button")
+      .classList.remove("button-active");
+    formElement
+      .querySelector(".form__button")
+      .classList.remove("button-state-change");
+    formElement.querySelector(".form__button").src =
+      "./images/Submit Button cancelled.png";
+    formElement
+      .querySelector(".form__button")
       .addEventListener("click", function (evt) {
-        createImage(elementFields[1].value, elementFields[0].value);
-        evt.target.parentElement.parentElement.remove();
+        if (Array.from(evt.target.classList).includes("button-active")) {
+          createImage(elementFields[1].value, elementFields[0].value);
+          evt.target.parentElement.parentElement.remove();
+        }
       });
   }
 
@@ -113,6 +132,7 @@ function openForm(type) {
     .addEventListener("click", function (evt) {
       evt.target.parentElement.parentElement.remove();
     });
+
   main.append(formElement);
 }
 
@@ -125,3 +145,46 @@ function save_changes() {
 
 edit_button.addEventListener("click", () => openForm("Edit"));
 add_button.addEventListener("click", () => openForm("Add"));
+page.addEventListener("click", function (evt) {
+  let form = document.querySelector(".form");
+  let fullview = document.querySelector(".fullview");
+  if (
+    form &&
+    !Array.from(evt.target.classList).some((cls) => cls.includes("form")) &&
+    counter
+  ) {
+    form.remove();
+    counter = !counter;
+  }
+  if (
+    fullview &&
+    !Array.from(evt.target.classList).some((cls) => cls.includes("image")) &&
+    counter
+  ) {
+    fullview.remove();
+    counter = !counter;
+  }
+  if (
+    Array.from(evt.target.classList).some((cls) =>
+      cls.includes("button-state-change")
+    ) ||
+    Array.from(evt.target.classList).some((cls) => cls.includes("foto"))
+  ) {
+    counter = !counter;
+  }
+});
+document.addEventListener("keydown", function (evt) {
+  if (evt.key === "Escape") {
+    // Close form or fullview if open
+    let form = document.querySelector(".form");
+    let fullview = document.querySelector(".fullview");
+    if (form) {
+      form.remove();
+      counter = !counter;
+    }
+    if (fullview) {
+      fullview.remove();
+      counter = !counter;
+    }
+  }
+});

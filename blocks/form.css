@@ -31,7 +31,6 @@
   font-family: "Inter-Regular", "Inter";
   font-weight: 900;
   font-size: 24px;
-  leading-trim: NONE;
   line-height: 100%;
   letter-spacing: 0%;
 
@@ -45,7 +44,6 @@
   width: 70%;
 }
 .form__field {
-  margin-bottom: 30px;
   font-family: Inter;
   font-weight: 400;
   font-size: 14px;
@@ -58,15 +56,25 @@
   border-right: none;
 }
 
+.form__field-error {
+  border-color: #ff0000;
+}
+
+.form__input-error {
+  font-family: "Inter-Regular", "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
+  margin-bottom: 9px;
+  height: 16px;
+}
+
 .form__button {
   height: 36px;
   width: 70%;
   margin-top: 16px;
-}
-
-.form__button:hover {
-  opacity: 0.5;
-  cursor: pointer;
 }
 
 .form-hide {
