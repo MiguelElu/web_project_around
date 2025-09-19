@@ -1,13 +1,9 @@
-//let edit_button = document.querySelector(".content__edit-button");
-//let add_button = document.querySelector(".content__add-button");
-
 export default class FormValidator {
   constructor(elementFields, button) {
     this.elementFields = elementFields;
     this.button = button;
   }
   _showError(input, error, button) {
-    // añadir la clase de error al elemento de entrada
     error.textContent = input.validationMessage;
     input.classList.add("form__field-error");
   }
@@ -54,11 +50,7 @@ export default class FormValidator {
   }
 
   enableValidation() {
-    //let elementFields = document.querySelectorAll(".form__field");
-    // let button = document.querySelector(".form__button");
     this._setEventListeners(this.elementFields, this.button);
     console.log();
   }
 }
-//edit_button.addEventListener("click", () => enableValidation());
-//add_button.addEventListener("click", () => enableValidation());
