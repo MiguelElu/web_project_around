@@ -1,5 +1,5 @@
-import Card from "./card.js";
-import FormValidator from "./validate.js";
+import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
 
 let form = document.querySelector(".form");
 
@@ -11,37 +11,7 @@ let main = document.querySelector(".content");
 let edit_button = document.querySelector(".content__edit-button");
 let add_button = document.querySelector(".content__add-button");
 
-const initialCards = [
-  {
-    name: "Valle de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
-  },
-  {
-    name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
-  },
-  {
-    name: "Montañas Calvas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
-  },
-  {
-    name: "Parque Nacional de la Vanoise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
-  },
-];
-
-initialCards.forEach(function (card) {
-  const new_card = new Card(card["link"], card["name"]);
-  new_card.create();
-});
+Card.innit();
 
 function openForm(type) {
   let formTemplate = document.querySelector("#form").content;
@@ -84,7 +54,11 @@ function openForm(type) {
       .querySelector(".form__button")
       .addEventListener("click", function (evt) {
         if (Array.from(evt.target.classList).includes("button-active")) {
-          createImage(elementFields[1].value, elementFields[0].value);
+          const new_card = new Card(
+            elementFields[1].value,
+            elementFields[0].value
+          );
+          new_card.create();
           evt.target.parentElement.parentElement.remove();
         }
       });
