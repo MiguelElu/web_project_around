@@ -1,3 +1,4 @@
+/*
 let page = document.querySelector(".page");
 let counter = false;
 page.addEventListener("click", function (evt) {
@@ -28,6 +29,7 @@ page.addEventListener("click", function (evt) {
     counter = !counter;
   }
 });
+
 document.addEventListener("keydown", function (evt) {
   if (evt.key === "Escape") {
     // Close form or fullview if open
@@ -43,3 +45,4 @@ document.addEventListener("keydown", function (evt) {
     }
   }
 });
+*/

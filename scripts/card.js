@@ -1,11 +1,14 @@
+import { page } from "./constants.js";
+import PopUpWithImage from "./PopUpWithImage.js";
+
 export default class Card {
   constructor(url, name) {
     this.url = url;
     this.name = name;
   }
   create() {
-    let page = document.querySelector(".page");
-    let gallery = document.querySelector(".content__gallery-grid");
+    //let page = document.querySelector(".page");
+    //let gallery = document.querySelector(".content__gallery-grid");
     let photoTemplate = document.querySelector("#photo-item").content;
     let photoElement = photoTemplate
       .querySelector(".content__foto-item")
@@ -30,7 +33,12 @@ export default class Card {
       });
     photoElement
       .querySelector(".content__foto")
-      .addEventListener("click", function (evt) {
+      .addEventListener("click", (evt) => {
+        const fullview_image = new PopUpWithImage(
+          "#image-fullview",
+          evt.target.src
+        );
+        /*
         let fullviewTemplate =
           document.querySelector("#image-fullview").content;
         let fullviewElement = fullviewTemplate
@@ -43,40 +51,8 @@ export default class Card {
           .addEventListener("click", (evt) => {
             evt.target.parentElement.parentElement.remove();
           });
-        page.prepend(fullviewElement);
+          */
       });
-    gallery.append(photoElement);
-  }
-  static innit() {
-    const initialCards = [
-      {
-        name: "Valle de Yosemite",
-        link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
-      },
-      {
-        name: "Lago Louise",
-        link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
-      },
-      {
-        name: "Montañas Calvas",
-        link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
-      },
-      {
-        name: "Latemar",
-        link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
-      },
-      {
-        name: "Parque Nacional de la Vanoise",
-        link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
-      },
-      {
-        name: "Lago di Braies",
-        link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
-      },
-    ];
-    initialCards.forEach(function (card) {
-      const new_card = new Card(card["link"], card["name"]);
-      new_card.create();
-    });
+    return photoElement;
   }
 }
