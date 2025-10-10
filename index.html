@@ -26,14 +26,14 @@
             <div class="content__name-container">
               <h2 class="content__name">Jacques Cousteau</h2>
               <img
-                class="content__edit-button button-active button-state-change"
+                class="content__edit-button button-active"
                 src="./images/Edit Button.png"
               />
             </div>
             <p class="content__job">Explorador</p>
           </div>
           <img
-            class="content__add-button button-active button-state-change"
+            class="content__add-button button-active"
             src="./images/Add Button.png"
           />
         </section>
@@ -48,7 +48,7 @@
 
     <template id="photo-item">
       <div class="content__foto-item">
-        <img class="content__foto button-state-change" src="" alt="" />
+        <img class="content__foto" src="" alt="" />
         <div class="content__foto-tag">
           <p class="content__photo-tag-name"></p>
           <img
@@ -64,52 +64,89 @@
         </div>
       </div>
     </template>
-    <template id="form">
-      <form class="form form-container" novalidate>
-        <div class="form__cancel-container">
-          <img
-            class="form__cancel-button button-active button-state-change"
-            src="./images/Close Icon.png"
-            alt="Close icon"
-          />
-        </div>
-        <div class="form__elements">
-          <h2 class="form__title"></h2>
-          <div class="form__fields">
-            <input
-              class="form__field"
-              type="text"
-              id="text1"
-              placeholder=""
-              required
-            />
-            <span class="form__input-error text1-error"></span>
-            <input class="form__field" placeholder="" id="text2" required />
-            <span class="form__input-error text2-error"></span>
-          </div>
-          <img
-            class="form__button button-active button-state-change"
-            src="./images/Submit Button.png"
-            alt="Botton de guardar"
-          />
-        </div>
-      </form>
-    </template>
     <template id="image-fullview">
       <div class="fullview">
         <div class="fullview__container">
           <img src="" alt="Paisaje en vista completa" class="fullview__image" />
           <img
-            class="fullview__cancel-button button-active button-state-change"
+            class="form__cancel-button fullview__cancel-button button-active"
             src="./images/Close Icon.png"
             alt="Close icon"
           />
         </div>
       </div>
     </template>
+    <template id="form-info">
+      <div class="fullview">
+        <form class="form form-container" novalidate>
+          <div class="form__cancel-container">
+            <img
+              class="form__cancel-button button-active"
+              src="./images/Close Icon.png"
+              alt="Close icon"
+            />
+          </div>
+          <div class="form__elements">
+            <h2 class="form__title"></h2>
+            <div class="form__fields">
+              <input
+                class="form__field"
+                type="text"
+                id="text1"
+                placeholder=""
+                required
+              />
+              <span class="form__input-error text1-error"></span>
+              <input class="form__field" placeholder="" id="text2" required />
+              <span class="form__input-error text2-error"></span>
+            </div>
+            <img
+              class="form__button"
+              src="./images/Submit Button cancelled.png"
+              alt="Botton de guardar"
+            />
+          </div>
+        </form>
+      </div>
+    </template>
+    <template id="form-add">
+      <div class="fullview">
+        <form class="form form-container" novalidate>
+          <div class="form__cancel-container">
+            <img
+              class="form__cancel-button button-active"
+              src="./images/Close Icon.png"
+              alt="Close icon"
+            />
+          </div>
+          <div class="form__elements">
+            <h2 class="form__title"></h2>
+            <div class="form__fields">
+              <input
+                class="form__field"
+                type="text"
+                id="text1"
+                placeholder=""
+                required
+              />
+              <span class="form__input-error text1-error"></span>
+              <input class="form__field" placeholder="" id="text2" required />
+              <span class="form__input-error text2-error"></span>
+            </div>
+            <img
+              class="form__button"
+              src="./images/Submit Button cancelled.png"
+              alt="Botton de guardar"
+            />
+          </div>
+        </form>
+      </div>
+    </template>
     <script src="./scripts/index.js" type="module"></script>
     <script src="./scripts/card.js" type="module"></script>
     <script src="./scripts/validate.js" type="module"></script>
+    <script src="./scripts/Section.js" type="module"></script>
+    <script src="./scripts/constants.js" type="module"></script>
     <script src="./scripts/utils.js"></script>
   </body>
 </html>
