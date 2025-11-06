@@ -23,7 +23,6 @@ export default class FormValidator {
 
   _setEventListeners(elementFields, button) {
     Array.from(elementFields).forEach((input) => {
-      console.log("adding event");
       const error = document.querySelector(`.${input.id}-error`);
       input.addEventListener("input", (evt) => {
         this._checkInputValidity(input, error, button);
@@ -51,6 +50,5 @@ export default class FormValidator {
 
   enableValidation() {
     this._setEventListeners(this.elementFields, this.button);
-    console.log();
   }
 }

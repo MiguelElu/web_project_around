@@ -2,25 +2,20 @@ import PopUp from "./Popup.js";
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 import { page } from "./constants.js";
-import UserInfo from "./UserInfo.js";
+import API from "./API.js";
 
 export default class PopupWithForm extends PopUp {
   constructor(selector, handleAddCard) {
     super(selector);
-    this.user = new UserInfo(
-      document.querySelector(".content__name").textContent,
-      document.querySelector(".content__job").textContent
-    );
+
     this._handleAddCard = handleAddCard;
-    this.element = this.open();
+
     this.elementFields = this.element.querySelectorAll(".form__field");
     const form_validator = new FormValidator(
       this.element.querySelectorAll(".form__field"),
       this.element.querySelector(".form__button")
     );
     form_validator.enableValidation();
-    this._handleEscClose();
-    this._setEventListeners();
   }
 
   open() {
@@ -50,6 +45,17 @@ export default class PopupWithForm extends PopUp {
       formElement.querySelector(".form__button").src =
         "./images/Submit Button cancelled.png";
     }
+    if (this.selector == "#form-change-picture") {
+      formElement.querySelector(".form__title").textContent =
+        "Cambiar foto de perfil";
+      elementFields[0].type = "url";
+      elementFields[0].placeholder = "Enlace a la imagen";
+      formElement
+        .querySelector(".form__button")
+        .classList.remove("button-active");
+      formElement.querySelector(".form__button").src =
+        "./images/Submit Button cancelled.png";
+    }
     page.prepend(formElement);
     return formElement;
   }
@@ -65,7 +71,7 @@ export default class PopupWithForm extends PopUp {
               this._getInputValues()[1],
               this._getInputValues()[0]
             );
-            this._handleAddCard(new_card.create());
+            this._handleAddCard(new_card);
             this.close();
           }
         });
@@ -75,19 +81,35 @@ export default class PopupWithForm extends PopUp {
         .querySelector(".form__button")
         .addEventListener("click", (evt) => {
           if (Array.from(evt.target.classList).includes("button-active")) {
-            this.user.setUserInfo(
-              this._getInputValues()[0],
-              this._getInputValues()[1],
-              document.querySelector(".content__name"),
-              document.querySelector(".content__job")
-            );
-            this.close();
+            const responses = this._getInputValues();
+            API.update_info(responses).then((res) => {
+              this.user.setUserInfo(
+                responses[0],
+                responses[1],
+                document.querySelector(".content__name"),
+                document.querySelector(".content__job")
+              );
+              this.close();
+            });
+          }
+        });
+    }
+    if (this.selector == "#form-change-picture") {
+      this.element
+        .querySelector(".form__button")
+        .addEventListener("click", (evt) => {
+          if (Array.from(evt.target.classList).includes("button-active")) {
+            API.change_picture(this);
           }
         });
     }
   }
   _getInputValues() {
     let elementFields = this.element.querySelectorAll(".form__field");
-    return [elementFields[0].value, elementFields[1].value];
+    let arr = [];
+    elementFields.forEach((element) => {
+      arr.push(element.value);
+    });
+    return arr;
   }
 }

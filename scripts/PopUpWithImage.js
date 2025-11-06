@@ -3,7 +3,7 @@ import { page } from "./constants.js";
 
 export default class PopUpWithImage extends PopUp {
   constructor(selector, url) {
-    super(selector);
+    this.selector = selector;
     this.url = url;
     this.element = this.open();
     this._setEventListeners();
