@@ -13,9 +13,30 @@
   align-items: center;
   flex-direction: row;
 }
+.content__avatar-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+.content__avatar-edit {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  opacity: 0.5;
+}
+.content__avatar-container:hover .content__avatar-edit {
+  display: flex;
+  cursor: pointer;
+}
+
 .content__avatar {
   width: 120px;
   height: 120px;
+  border-radius: 50%;
 }
 .content__profile-info {
   display: flex;

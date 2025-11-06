@@ -21,16 +21,21 @@
       </header>
       <main class="content">
         <section class="content__profile">
-          <img class="content__avatar" src="./images/Avatar.png" />
+          <div class="content__avatar-container">
+            <div class="content__avatar-edit">
+              <img src="./images/edit_symbol.png" />
+            </div>
+            <img class="content__avatar" src="" />
+          </div>
           <div class="content__profile-info">
             <div class="content__name-container">
-              <h2 class="content__name">Jacques Cousteau</h2>
+              <h2 class="content__name"></h2>
               <img
                 class="content__edit-button button-active"
                 src="./images/Edit Button.png"
               />
             </div>
-            <p class="content__job">Explorador</p>
+            <p class="content__job"></p>
           </div>
           <img
             class="content__add-button button-active"
@@ -68,6 +73,23 @@
       <div class="fullview">
         <div class="fullview__container">
           <img src="" alt="Paisaje en vista completa" class="fullview__image" />
+          <img
+            class="form__cancel-button fullview__cancel-button button-active"
+            src="./images/Close Icon.png"
+            alt="Close icon"
+          />
+        </div>
+      </div>
+    </template>
+    <template id="confirmation-button">
+      <div class="fullview">
+        <div class="fullview__container">
+          <div class="confirmation__container">
+            <div class="confirmation__message">¿Estás seguro?</div>
+            <div class="confirmation__button">
+              <p class="confirmation__button-text">Sí</p>
+            </div>
+          </div>
           <img
             class="form__cancel-button fullview__cancel-button button-active"
             src="./images/Close Icon.png"
@@ -142,9 +164,33 @@
         </form>
       </div>
     </template>
+    <template id="form-change-picture">
+      <div class="fullview">
+        <form class="form form-container" novalidate>
+          <div class="form__cancel-container">
+            <img
+              class="form__cancel-button button-active"
+              src="./images/Close Icon.png"
+              alt="Close icon"
+            />
+          </div>
+          <div class="form__elements">
+            <h2 class="form__title"></h2>
+            <div class="form__fields">
+              <input class="form__field" placeholder="" id="text2" required />
+              <span class="form__input-error text2-error"></span>
+            </div>
+            <img
+              class="form__button"
+              src="./images/Submit Button cancelled.png"
+              alt="Botton de guardar"
+            />
+          </div>
+        </form>
+      </div>
+    </template>
     <script src="./scripts/index.js" type="module"></script>
     <script src="./scripts/card.js" type="module"></script>
-    <script src="./scripts/validate.js" type="module"></script>
     <script src="./scripts/Section.js" type="module"></script>
     <script src="./scripts/constants.js" type="module"></script>
     <script src="./scripts/utils.js"></script>

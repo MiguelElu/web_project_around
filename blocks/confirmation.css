@@ -1,0 +1,40 @@
+.confirmation__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 8px 8px 16px;
+  width: 430px;
+  height: 181px;
+  background-color: white;
+  border-radius: 16px;
+}
+
+.confirmation__message {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  width: 358px;
+  color: #000000;
+}
+
+.confirmation__button {
+  margin-top: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  width: 358px;
+  height: 50px;
+}
+.confirmation__button-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #ffffff;
+}
